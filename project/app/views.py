@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
-
+import stripe
 # Create your views here.
 
 
 def test(request):
-    return render(request, 'app/template.html')
+    return render(request, 'app/index.html')
 
 
 def charge(request):
@@ -13,7 +13,7 @@ def charge(request):
     if request.method == 'POST':
         print('Data:', request.POST)
 
-    return redirect(reverse('ok', args=[amount]))
+    return redirect(reverse('success', args=[amount]))
 
 
 def success(request, args):
