@@ -11,4 +11,4 @@ from .models import Product, Order
 
 
 def simpleCheckout(request):
-	return render(request, 'base/simple_checkout.html')
+	return render(request, 'pay_pal/simple-checkout.html')
