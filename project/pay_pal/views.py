@@ -23,7 +23,8 @@ def demo_store(request):
 def checkout(request, pk):
 	product = Product.objects.get(id=pk)
 	context = {'products': product}
-	return render(request, 'pay_pal/product_checkout.html')
+	return render(request, 'pay_pal/product_checkout.html', context)
+
 
 def paymentComplete(request):
 	body = json.loads(request.body)
